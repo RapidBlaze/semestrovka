@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="itis-sem-webapp:war">
+    <output-path>$PROJECT_DIR$/itis-sem-webapp/target</output-path>
+    <root id="archive" name="itis-sem-webapp.war">
+      <element id="artifact" artifact-name="itis-sem-webapp:war exploded" />
+    </root>
+  </artifact>
+</component>
