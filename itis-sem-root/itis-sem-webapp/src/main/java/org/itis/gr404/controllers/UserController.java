@@ -1,8 +1,10 @@
-package controllers;
+package org.itis.gr404.controllers;
 
 
-import dao.UserRepository;
-import entity.User;
+
+import org.itis.gr404.crud.UserRepository;
+import org.itis.gr404.entity.User;
+import org.itis.gr404.validators.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -12,7 +14,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import validators.UserValidator;
 
 @Controller
 public class UserController {
@@ -32,7 +33,7 @@ public class UserController {
     @RequestMapping(value = "/user/add", method = RequestMethod.GET)
     public Object addUser(ModelMap model) {
         model.addAttribute("user", new User());
-        return "addUser";
+        return "user";
     }
 
 
@@ -40,7 +41,7 @@ public class UserController {
     public String addUser(@ModelAttribute @Validated User user, BindingResult bindingResult) {
         userValidator.validate(user, bindingResult);
         if (bindingResult.hasErrors()) {
-            return "addUser";
+            return "user";
         }
         try {
             userRepository.getUser(user.getId());

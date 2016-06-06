@@ -1,4 +1,4 @@
-package entity;
+package org.itis.gr404.entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;

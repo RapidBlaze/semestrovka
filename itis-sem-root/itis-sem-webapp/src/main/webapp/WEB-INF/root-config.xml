@@ -21,7 +21,7 @@
     <mvc:annotation-driven />
 
     <!-- Определяем папки, в которых будем автоматически искать бины-компоненты (@Component, @Service)  -->
-    <context:component-scan base-package="org.itis.gr404.dao"/>
+    <context:component-scan base-package="org.itis.gr404.crud"/>
     <context:component-scan base-package="org.itis.gr404.controllers"/>
     <context:component-scan base-package="org.itis.gr404.validators"/>
 
